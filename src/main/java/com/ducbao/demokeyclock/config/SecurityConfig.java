@@ -28,6 +28,11 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * jwtAuthenticationConverter -> Thằng này cho phép chúng ta customs lại role để lấy được role từ keycloak trả về
+     * authenticationEntryPoint(new JwtAuthenticationEntryPoint())) ->  thằng này thì sẽ cho phép điều hướng nếu xác thực failed
+     *
+     * **/
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter(){
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
